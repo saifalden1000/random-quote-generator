@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Random Quote Generator</title>
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center quote-box bg-light rounded-3 overflow-hidden">
+      <div class="p-5">
+        <h1>Click the button to get a new quote!</h1>
+
+        <button class="btn btn-outline-primary" onclick="generateQuote()">
+          New Quote
+        </button>
+        <div class="py-3">
+          <p id="quote"></p>
+          <p id="author" class="text-secondary"></p>
+        </div>
+      </div>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Add Or Remove Quote Section
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <textarea
+                class="form-control mb-3"
+                type="text"
+                id="new-quote-text"
+                placeholder="Enter the quote text"
+                rows="5"
+              ></textarea>
+              <input
+                class="form-control mb-4"
+                type="text"
+                id="new-quote-author"
+                placeholder="Enter the quote author"
+              />
+              <div class="d-flex justify-content-around align-items-center">
+                <button
+                  class="btn btn-success"
+                  id="add-quote"
+                  onclick="addQuote()"
+                >
+                  Add Quote
+                </button>
+                <button class="btn btn-outline-danger" onclick="removeQuote()">
+                  Remove Displayed Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
